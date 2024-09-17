@@ -1,5 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
+import Grid from "@mui/material/Grid2";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import PageContainer from "../../components/container/PageContainer";
 import StockOverview from "./components/StockOverview";
@@ -22,17 +22,19 @@ const Dashboard = () => {
         }}
       >
         <Grid container spacing={2} maxWidth={"100%"}>
-          {/* Coluna esquerda com SalesOverview, ajustada para ocupar mais espaço */}
-          <Grid item xs={12} lg={8}>
+          <Grid size={{ xs: 12, lg: 8 }}>
             <SalesOverview />
           </Grid>
-
-          {/* Coluna direita com StockOverview e StockUnderSafety empilhados */}
-          <Grid item xs={12} lg={4} container direction="column" spacing={2}>
-            <Grid item>
+          <Grid
+            size={{ xs: 12, lg: 4 }}
+            container
+            direction="column"
+            spacing={2}
+          >
+            <Grid>
               <StockOverview />
             </Grid>
-            <Grid item>
+            <Grid>
               <StockUnderSafety />
             </Grid>
           </Grid>
